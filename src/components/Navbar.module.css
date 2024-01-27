@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav {
+    display: flex;
+    position: relative;
+    height: 60px;
+    background-color: rgb(2, 0, 31);
+}
+
+.namelogo {
+    display: flex;
+    width: 15%;
+    /* top: 9px;
+    left: 10px; */
+    position: relative;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.namelogo img {
+    display: flex;
+    width: 90%;
+    height: 40px;
+    top: 9px;
+    left: 10px;
+    position: relative;
+}
+
+.namelogo h2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    position: relative;
+}
+
+.searchbar {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar form {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.searchbar input {
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    bottom: 15px;
+    left: 30px;
+    border: none;
+    font-size: 1rem ;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.searchbar input:focus {
+    outline: none;
+}
+
+.searchicon {
+    display: inline-flex;
+    position: relative;
+    bottom: 15px;
+    left: 20px;
+    height: 40px;
+    width: 10%;
+    background-color: white;
+    place-items: center;
+    justify-content: center;
+    border-left: 1px solid rgb(190, 187, 187);
+    border-end-end-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.searchicon:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+
+.navlinks {
+    width: 15%;
+    margin-left: 20px;
+}
+
+.navlinks ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.navlinks ul li {
+    width: 50%;
+    height: 60px;
+    display: flex;
+    list-style: none;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navlinks ul li:hover {
+    background-color: green;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navlinks ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+}
+
+.navlinks ul li button {
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    background: none;
+    width: 100%;
+    height: 60px;
+    color: white;
+}
+
+.navlinks ul li a p {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.navlinks ul li button p {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.address {
+    width: 20%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.address:hover {
+    cursor: pointer;
+    background-color: green;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.address a {
+    text-decoration: none;
+    display: flex;
+    font-size: 18px;
+    color: white;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.locationicon {
+    display: flex;
+    color: white;
+    transform: scale(1.2);
+}
+
+.cart {
+    width: 10%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;   
+}
+
+.cart:hover {
+    cursor: pointer;
+    background-color: green;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cart a {
+    text-decoration: none;
+    display: flex;
+    font-size: 18px;
+    color: white;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.carticon {
+    display: flex;
+    color: white;
+    transform: scale(1.4);
+}
