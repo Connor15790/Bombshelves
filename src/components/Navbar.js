@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import styles from "./Navbar.module.css"
+import styles from "./styles/Navbar.module.css"
 import SearchIcon from '@mui/icons-material/Search';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -23,7 +23,7 @@ const Navbar = () => {
             </div>
             <div className={styles.navlinks}>
                 <ul>
-                    <li><button onClick={()=> setpopUp(true)}><p>Account</p> <p>Sign In/Up</p></button></li>
+                    <li><button onClick={()=> setpopUp(true)}><p>Account Sign In/Up</p></button></li>
                     <li><a href="/">Orders</a></li>
                 </ul>
             </div>

@@ -1,13 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from "./Register.module.css";
+import styles from "./styles/Register.module.css";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/;
 const REGISTER_URL = "/register";
 
-const Register = () => {
+const Register = (props) => {
     const userRef = useRef();
     const errRef = useRef();
     let navigate = useNavigate();
@@ -86,11 +86,8 @@ const Register = () => {
             // Save the auth token and redirect
             localStorage.setItem("token", json.authToken);
             navigate("/")
-            // props.showAlert("Account Created Successfully", "success");
+            alert("Account Created Successfully!")
         }
-        // else {
-        //     // props.showAlert("Invalid Credentials", "danger");
-        // }
     }
 
     return (
@@ -194,9 +191,8 @@ const Register = () => {
                                     - Must match the first password input field.
                                 </p>
                             </div>
-                            <div className={styles.btn}>
-                                <div className={styles.inner}></div>
-                                <button type="submit"  onClick={handleSubmit}>Sign Up</button>
+                            <div className={validName && validNumber && validEmail && validPwd && validMatch ? styles.btn : styles.btndis}>
+                                <button type="submit" disabled={validName && validNumber && validEmail && validPwd && validMatch ? false : true} onClick={handleSubmit}>Sign Up</button>
                             </div>
                         </form>
                     </div>
