@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from "./Register.module.css";
-import axios from "../api/axios";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -42,22 +41,26 @@ const Register = () => {
 
     useEffect(() => {
         const result = USER_REGEX.test(user);
-        console.log(result);
-        console.log(user);
         setValidName(result);
     }, [user])
 
     useEffect(() => {
+        if (number.toString().length === 10) {
+            setValidNumber(true);
+        }
+        else {
+            setValidNumber(false);
+        }
+        console.log(number.toString().length);
+    }, [number])
+
+    useEffect(() => {
         const result = EMAIL_REGEX.test(email + "com");
-        console.log(result);
-        console.log(email);
         setValidEmail(result);
     }, [email])
 
     useEffect(() => {
         const result = PWD_REGEX.test(pwd);
-        console.log(result);
-        console.log(pwd);
         setValidPwd(result);
         const match = pwd === matchPwd;
         setValidMatch(match);
@@ -78,7 +81,6 @@ const Register = () => {
         });
 
         const json = await response.json();
-        console.log(json);
 
         if (json.success) {
             // Save the auth token and redirect
@@ -90,8 +92,6 @@ const Register = () => {
         //     // props.showAlert("Invalid Credentials", "danger");
         // }
     }
-
-    console.log(validName, validPwd, validMatch);
 
     return (
         <>
@@ -126,7 +126,7 @@ const Register = () => {
                                 </p>
                             </div>
                             <div className={styles.data1}>
-                                <label htmlFor="username">Number:</label>
+                                <label htmlFor="number">Number:</label>
                                 <input
                                     type="number"
                                     required
@@ -135,14 +135,12 @@ const Register = () => {
                                     onChange={(e) => setNumber(e.target.value)}
                                     aria-invalid={validNumber ? "false" : "true"}
                                     // aria-aria-describedby='uidnote'
-                                    // onFocus={() => setNumberFocus(true)}
+                                    onFocus={() => setNumberFocus(true)}
                                     onBlur={() => setNumberFocus(false)}
                                 />
-                                {/* <p id='uidnote' className={numberFocus && number && !validNumber ? styles.instructions : styles.offscreen}>
-                                    - 4 to 24 characters.<br />
-                                    - Must begin with a letter.<br />
-                                    - Letters, numbers, underscores, hyphens allowed.
-                                </p> */}
+                                <p id='uidnote' className={numberFocus && number && !validNumber ? styles.instructions : styles.offscreen}>
+                                    - Must be a valid number
+                                </p>
                             </div>
                             <div className={styles.data1}>
                                 <label htmlFor="email">Email:</label>

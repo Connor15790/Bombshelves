@@ -11,7 +11,7 @@
 .regcontainer {
     display: flex;
     position: relative;
-    top: 280px;
+    top: 320px;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgb(255, 255, 255);
