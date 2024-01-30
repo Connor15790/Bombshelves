@@ -51,7 +51,6 @@ const Register = (props) => {
         else {
             setValidNumber(false);
         }
-        console.log(number.toString().length);
     }, [number])
 
     useEffect(() => {
@@ -82,12 +81,18 @@ const Register = (props) => {
 
         const json = await response.json();
 
+        if (json.useremail) {
+            alert("Email already exists!");
+        } else if (json.usernumber) {
+            alert(("Phone Number already exists!"))
+        }
+
         if (json.success) {
             // Save the auth token and redirect
             localStorage.setItem("token", json.authToken);
             navigate("/")
             alert("Account Created Successfully!")
-        }
+        } 
     }
 
     return (

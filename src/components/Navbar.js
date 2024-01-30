@@ -3,11 +3,11 @@ import styles from "./styles/Navbar.module.css"
 import SearchIcon from '@mui/icons-material/Search';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import Popup from './Popup';
 
 const Navbar = () => {
-
-    let [popUp, setpopUp] = useState(false)
+    let [popUp, setpopUp] = useState(false);
 
     return (
         <nav className={styles.nav}>
@@ -34,6 +34,9 @@ const Navbar = () => {
             <div className={styles.cart}>
                 <div className={styles.carticon}><AddShoppingCartIcon/></div>
                 <a href="/"><p>Cart</p></a>
+            </div>
+            <div className={styles.profile}>
+                <a href="/"><div className={styles.carticon}><AccountBoxIcon/></div></a>
             </div>
 
             <Popup trigger={popUp} closetrigger={setpopUp}/>
